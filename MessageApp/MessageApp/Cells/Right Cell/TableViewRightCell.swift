@@ -24,7 +24,12 @@ class TableViewRightCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func setRightCell (newMessage: Message) {
-        rightMessageLabel.text = newMessage.message
+//        let currentDateTime = Date()                        // Class içine yazınca olmuyor.
+//        let formatter = DateFormatter()
+//        formatter.timeStyle = .medium
+//        formatter.dateStyle = .long
+//        let dateTimeString = formatter.string(from: currentDateTime)
+        rightMessageLabel.text = newMessage.message + "\n \n" + newMessage.time
     }
     
     func prepareLayer(object: Any) {

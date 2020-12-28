@@ -10,4 +10,5 @@ import Foundation
 struct Message {
     let message : String
     let isRight : Bool
+    let time : String
 }

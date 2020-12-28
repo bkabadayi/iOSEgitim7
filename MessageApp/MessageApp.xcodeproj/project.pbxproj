@@ -91,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				7A4613E9259611FA009FCD03 /* Right Cell */,
+				7A4613EA2596120F009FCD03 /* Left Cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -100,7 +101,6 @@
 			children = (
 				7A4613DD2595CB89009FCD03 /* TableViewRightCell.swift */,
 				7A4613DE2595CB89009FCD03 /* TableViewRightCell.xib */,
-				7A4613EA2596120F009FCD03 /* Left Cell */,
 			);
 			path = "Right Cell";
 			sourceTree = "<group>";

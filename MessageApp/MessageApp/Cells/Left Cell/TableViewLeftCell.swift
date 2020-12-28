@@ -25,7 +25,7 @@ class TableViewLeftCell: UITableViewCell {
     }
     
     func setLeftCell (newMessage: Message) {
-        leftMessageLabel.text = newMessage.message
+        leftMessageLabel.text = newMessage.message + "\n \n" + newMessage.time
     }
     
     func prepareLayer(object: Any) {

@@ -72,21 +72,31 @@ final class HomePageVC: UIViewController {
     // MARK: - ACTIONS
     
     @IBAction func firstUserButtonTouched(_ sender: Any) {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .medium
+        let dateTimeString = formatter.string(from: currentDateTime)
         guard let leftText = firstUserTF.text else {return}
         if leftText != "" {
             isRightButtonClicked = false
-            messages.append(Message(message: leftText, isRight: false))
+            messages.append(Message(message: leftText, isRight: false, time : dateTimeString))
             tableView.reloadData()
             tableView.scrollToRow(at: IndexPath(row: messages.count - 1, section: 0), at: .top, animated: true)
             firstUserTF.text = ""
         }
     }
-    
+
     @IBAction func secondUserButtonTouched(_ sender: Any) {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .medium
+        let dateTimeString = formatter.string(from: currentDateTime)
         guard let rightText = secondUserTF.text else {return}
         if rightText != "" {
             isRightButtonClicked = true
-            messages.append(Message(message: rightText, isRight: true))
+            messages.append(Message(message: rightText, isRight: true, time: dateTimeString))
             tableView.reloadData()
             tableView.scrollToRow(at: IndexPath(row: messages.count - 1, section: 0), at: .top, animated: true)
             secondUserTF.text = ""
@@ -115,7 +125,6 @@ extension HomePageVC: UITableViewDataSource {
             leftCell.setLeftCell(newMessage: messages[indexPath.row])
             return leftCell
         }
-        
     }
 }
 
